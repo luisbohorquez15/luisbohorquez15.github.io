@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luis Alejandro Bohórquez · Portafolio</title>
+<meta name="description" content="Estudiante de Ingeniería de Sistemas (UNAB) y emprendedor. Creo soluciones tecnológicas para mejorar la vida en la ciudad.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0F172A; --blue:#0284C7; --gray:#94A3B8;
+    --bg:#FFFFFF; --soft:#F1F5F9; --text:#0F172A; --muted:#475569; --line:#E2E8F0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+  a{color:var(--blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+
+  nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+  .logo{font-weight:700;color:var(--navy)}
+  .logo span{color:var(--blue)}
+  nav ul{list-style:none;display:flex;gap:22px}
+  nav ul a{color:var(--muted);font-size:.92rem;font-weight:500}
+  nav ul a:hover{color:var(--blue);text-decoration:none}
+
+  header{background:var(--navy);color:#fff;padding:90px 0 80px}
+  .tag{display:inline-block;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:#7DD3FC;margin-bottom:14px;font-weight:600}
+  h1{font-size:clamp(2rem,5vw,3rem);line-height:1.15;margin-bottom:16px}
+  h1 span{color:#38BDF8}
+  header p{color:#CBD5E1;max-width:620px;font-size:1.08rem}
+  .btns{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{padding:11px 20px;border-radius:8px;font-weight:600;font-size:.95rem}
+  .btn.primary{background:var(--blue);color:#fff}
+  .btn.ghost{border:1px solid #475569;color:#fff}
+  .btn:hover{text-decoration:none;opacity:.9}
+
+  section{padding:70px 0;border-bottom:1px solid var(--line)}
+  section.alt{background:var(--soft)}
+  h2{font-size:1.6rem;margin-bottom:8px}
+  .lead{color:var(--muted);margin-bottom:34px;max-width:640px}
+
+  .about{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
+  .about p{margin-bottom:14px}
+  .facts{background:var(--soft);border-radius:12px;padding:22px}
+  .facts div{padding:10px 0;border-bottom:1px solid var(--line)}
+  .facts div:last-child{border:0}
+  .facts b{display:block;font-size:1.4rem;color:var(--blue)}
+  .facts small{color:var(--muted)}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px;display:flex;flex-direction:column}
+  .card .kicker{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--blue);font-weight:600}
+  .card h3{font-size:1.18rem;margin:6px 0 10px}
+  .card p{color:var(--muted);font-size:.94rem;margin-bottom:10px}
+  .card .label{font-weight:600;color:var(--text);font-size:.85rem;margin-top:4px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 16px}
+  .chip{font-size:.78rem;background:var(--soft);color:var(--navy);padding:4px 10px;border-radius:999px;border:1px solid var(--line)}
+  .card .more{margin-top:auto;font-weight:600;font-size:.92rem}
+
+  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+  .skills h3{font-size:1rem;margin-bottom:10px}
+
+  .contact{text-align:center}
+  .contact .lead{margin:0 auto 26px}
+  .contact .btns{justify-content:center}
+  .contact .btn.ghost{color:var(--navy);border-color:var(--gray)}
+
+  footer{padding:26px 0;text-align:center;color:var(--gray);font-size:.85rem}
+
+  @media (max-width:720px){
+    nav ul{display:none}
+    .about{grid-template-columns:1fr}
+    header{padding:64px 0 56px}
+    section{padding:54px 0}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo">Luis <span>Bohórquez</span></a>
+    <ul>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#emprendimientos">Emprendimientos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="tag">Ingeniería de Sistemas · UNAB · Bucaramanga</div>
+    <h1>Creo soluciones tecnológicas para que la vida en la ciudad <span>funcione mejor.</span></h1>
+    <p>Soy Luis Alejandro, estudiante de Ingeniería de Sistemas y emprendedor. Desarrollo software, diseño productos digitales y explico lo técnico de forma sencilla.</p>
+    <div class="btns">
+      <a class="btn primary" href="#proyectos">Ver proyectos</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/luis-alejandro-bohorquez-garcia-600184437" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn ghost" href="https://github.com/luisbohorquez15" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</header>
+
+<section id="sobre-mi">
+  <div class="wrap about">
+    <div>
+      <h2>Sobre mí</h2>
+      <p>Estudio sexto semestre de Ingeniería de Sistemas en la Universidad Autónoma de Bucaramanga. Creo que la tecnología vale la pena cuando mejora la vida diaria de las personas, por eso me interesan los problemas de la ciudad: la movilidad, la seguridad y el turismo local.</p>
+      <p>Además de programar, emprendo. Soy cofundador de Velian y fundador de Chili Vicios. Vender con mis propias manos me enseñó a entender al cliente antes de escribir una sola línea de código.</p>
+      <p>Lo que me diferencia es que sé explicar: traduzco lo técnico a lenguaje sencillo, presento ideas con soltura y me gusta construir prototipos para validarlos con usuarios reales. Aquí comparto lo que construyo y lo que aprendo en el camino.</p>
+    </div>
+    <div class="facts">
+      <div><b>3</b><small>proyectos de software documentados</small></div>
+      <div><b>2</b><small>emprendimientos activos</small></div>
+      <div><b>~300</b><small>clientes atendidos al mes entre mis negocios</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="proyectos" class="alt">
+  <div class="wrap">
+    <h2>Proyectos</h2>
+    <p class="lead">Cada proyecto empieza con un problema real. Aquí está qué resuelve, cómo lo construí y qué aprendí.</p>
+    <div class="grid">
+      <article class="card">
+        <span class="kicker">Movilidad · Seguridad</span>
+        <h3>PULSO · Rutas seguras en tiempo real</h3>
+        <p><span class="label">Problema:</span> las apps de mapas dicen cuál ruta es más rápida, pero casi nunca cuál es más segura para moverse por la ciudad.</p>
+        <p><span class="label">Solución:</span> una plataforma de movilidad que combina rutas con información actualizada en tiempo real para que las personas decidan cómo desplazarse de forma más segura.</p>
+        <div class="chips"><span class="chip">Node.js</span><span class="chip">MongoDB</span></div>
+        <a class="more" href="https://github.com/luisbohorquez15" target="_blank" rel="noopener">Ver en GitHub →</a>
+      </article>
+      <article class="card">
+        <span class="kicker">Salud</span>
+        <h3>OptiMed · Gestión de turnos médicos</h3>
+        <p><span class="label">Problema:</span> la asignación de citas médicas suele ser desordenada y genera saturación y pérdida de turnos.</p>
+        <p><span class="label">Solución:</span> una plataforma web responsiva que centraliza el agendamiento y optimiza la gestión de turnos médicos.</p>
+        <div class="chips"><span class="chip">Firebase Auth</span><span class="chip">Cloud Firestore</span><span class="chip">Ingeniería de Software</span></div>
+        <a class="more" href="https://github.com/luisbohorquez15" target="_blank" rel="noopener">Ver en GitHub →</a>
+      </article>
+      <article class="card">
+        <span class="kicker">Impacto social</span>
+        <h3>PetMatch · Adopciones y donaciones</h3>
+        <p><span class="label">Problema:</span> muchas fundaciones de animales gestionan adopciones y donaciones por chats y hojas de cálculo sueltas.</p>
+        <p><span class="label">Solución:</span> una aplicación móvil que centraliza el proceso de adopción y el apoyo económico a las fundaciones.</p>
+        <div class="chips"><span class="chip">Kotlin</span><span class="chip">Android</span></div>
+        <a class="more" href="https://github.com/luisbohorquez15" target="_blank" rel="noopener">Ver en GitHub →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="emprendimientos">
+  <div class="wrap">
+    <h2>Emprendimientos</h2>
+    <p class="lead">Mis negocios son mi laboratorio de producto: aquí aprendo a escuchar clientes, validar ideas y vender.</p>
+    <div class="grid">
+      <article class="card">
+        <span class="kicker">Cofundador · desde abril de 2025</span>
+        <h3>Velian · Tartas vascas</h3>
+        <p>Negocio 100 % online. Gestiono las ventas, administro Instagram y las campañas de Meta Ads para atraer clientes.</p>
+        <div class="chips"><span class="chip">~170 clientes/mes</span><span class="chip">Meta Ads</span><span class="chip">Ventas online</span></div>
+      </article>
+      <article class="card">
+        <span class="kicker">Fundador · desde enero de 2026</span>
+        <h3>Chili Vicios · Gomitas enchiladas</h3>
+        <p>Desarrollé la receta de la salsa y la preparo yo mismo. Crecimos en eventos y por voz a voz, sin publicidad pagada.</p>
+        <div class="chips"><span class="chip">~130 clientes/mes</span><span class="chip">Desarrollo de producto</span><span class="chip">Eventos</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>Habilidades</h2>
+    <p class="lead">Lo técnico y lo humano, juntos.</p>
+    <div class="skills">
+      <div><h3>Desarrollo</h3><div class="chips"><span class="chip">Python</span><span class="chip">Java</span><span class="chip">JavaScript / TypeScript</span><span class="chip">Node.js</span><span class="chip">React</span><span class="chip">Kotlin</span></div></div>
+      <div><h3>Datos y herramientas</h3><div class="chips"><span class="chip">SQL</span><span class="chip">MongoDB</span><span class="chip">Firebase</span><span class="chip">Docker</span><span class="chip">Git / GitHub</span></div></div>
+      <div><h3>Producto y diseño</h3><div class="chips"><span class="chip">Figma</span><span class="chip">UX/UI</span><span class="chip">Prototipado</span><span class="chip">Meta Ads</span></div></div>
+      <div><h3>Comunicación</h3><div class="chips"><span class="chip">Oratoria</span><span class="chip">Presentación de ideas</span><span class="chip">Trabajo en equipo</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="contact">
+  <div class="wrap">
+    <h2>Conectemos</h2>
+    <p class="lead">Estoy abierto a conversar con estudiantes, profesionales y emprendedores interesados en tecnología, innovación y soluciones para la ciudad.</p>
+    <div class="btns">
+      <a class="btn primary" href="mailto:laleboga@gmail.com">laleboga@gmail.com</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/luis-alejandro-bohorquez-garcia-600184437" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn ghost" href="https://github.com/luisbohorquez15" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Luis Alejandro Bohórquez García · Bucaramanga, Colombia</footer>
+
+</body>
+</html>
