@@ -5,37 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PULSO · Rutas seguras en tiempo real · Luis Alejandro Bohórquez</title>
 <meta name="description" content="PULSO: sistema de rutas seguras para el transporte público de Bucaramanga. API REST en Node.js, MongoDB con índices geoespaciales y alertas ciudadanas.">
+<link rel="icon" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<nav>
-  <div class="wrap">
-    <a href="index.html" class="logo">Luis <span>Bohórquez</span></a>
-    <ul>
-      <li><a href="index.html#sobre-mi">Sobre mí</a></li>
-      <li><a href="index.html#proyectos">Proyectos</a></li>
-      <li><a href="index.html#emprendimientos">Emprendimientos</a></li>
-      <li><a href="index.html#contacto">Contacto</a></li>
-    </ul>
+<div class="wrap">
+  <header class="top">
+    <a href="ingeniero.html" class="back">← Volver a proyectos</a>
+    <nav>
+      <a href="ingeniero.html" aria-current="page">Ingeniero</a>
+      <a href="emprendedor.html">Emprendedor</a>
+      <a href="comunicador.html">Comunicador</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <div class="page-head rise narrow">
+    <span class="eyebrow">Caso de estudio · Movilidad · Bucaramanga</span>
+    <h1>PULSO · <em>rutas seguras</em> en tiempo real</h1>
+    <p>No cuál ruta es la más rápida, sino cuál es la más segura. Proyecto académico del curso Base de Datos II · UNAB, 2026 · Equipo de cuatro estudiantes.</p>
+    <div class="chips" style="margin-top:18px"><span class="chip">Node.js</span><span class="chip">API REST</span><span class="chip">MongoDB</span><span class="chip">Índices geoespaciales</span><span class="chip">JSON Schema</span><span class="chip">$lookup</span><span class="chip">GPS</span></div>
   </div>
-</nav>
 
-<header>
-  <div class="wrap">
-    <a class="crumb" href="index.html#proyectos">← Volver a proyectos</a>
-    <div class="tag">Movilidad · Seguridad · Bucaramanga</div>
-    <h1>PULSO · <span>Rutas seguras en tiempo real</span></h1>
-    <p>Un sistema que responde la pregunta que las apps de mapas casi nunca responden: no cuál ruta es la más rápida, sino cuál es la más segura.</p>
-    <p class="meta">Proyecto académico del curso Base de Datos II · Universidad Autónoma de Bucaramanga, 2026 · Equipo de 4 estudiantes</p>
-  </div>
-</header>
-
-<section>
-  <div class="wrap case">
-
+  <section class="case narrow rise d2">
     <h2>El problema</h2>
     <p>Quien usa el transporte público en Bucaramanga suele esperar sin saber cuándo llega el bus, atraviesa zonas inseguras que nadie ha señalado y depende de un sistema fragmentado. El resultado es tiempo perdido todos los días, frustración y riesgo.</p>
 
@@ -43,14 +39,14 @@
     <p>PULSO es un sistema inteligente de rutas seguras para el área metropolitana de Bucaramanga, con aplicación web y móvil. Integra cuatro funciones:</p>
     <ul>
       <li><b>Monitoreo GPS en tiempo real</b> de buses y rutas, con ubicación y tiempos de llegada actualizados.</li>
-      <li><b>Alertas ciudadanas:</b> reportes comunitarios de zonas inseguras e incidentes, clasificados por nivel de riesgo, que generan notificaciones antes de que el usuario llegue a la zona.</li>
-      <li><b>Mapa interactivo</b> que muestra áreas seguras y críticas para que la persona elija un camino confiable.</li>
+      <li><b>Alertas ciudadanas:</b> reportes comunitarios de zonas inseguras e incidentes, clasificados por nivel de riesgo, que avisan antes de que el usuario llegue a la zona.</li>
+      <li><b>Mapa interactivo</b> con áreas seguras y críticas para elegir un camino confiable.</li>
       <li><b>Pagos electrónicos</b> integrados para viajar sin efectivo.</li>
     </ul>
 
     <h2>Cómo está construido</h2>
-    <p>El backend es una API REST desarrollada en Node.js que comunica las aplicaciones con una base de datos NoSQL en MongoDB. El modelo de datos tiene siete colecciones —usuarios, buses, rutas, paradas, conductores, reportes y pagos— con un diseño documental que usa referencias entre colecciones.</p>
-    <p>Para que las consultas en tiempo real sean eficientes usamos <b>índices geoespaciales</b>, y la integridad de los datos se controla con <b>validación JSON Schema</b>. Construimos consultas de agregación con <code>$lookup</code> para obtener:</p>
+    <p>El backend es una API REST en Node.js conectada a MongoDB. El modelo de datos tiene siete colecciones —usuarios, buses, rutas, paradas, conductores, reportes y pagos— con un diseño documental que usa referencias entre colecciones.</p>
+    <p>Para que las consultas en tiempo real sean eficientes usamos <b>índices geoespaciales</b>, y la integridad de los datos se controla con <b>validación JSON Schema</b>. Con agregaciones <code>$lookup</code> obtenemos:</p>
     <ul>
       <li>los buses de cada ruta con su información completa,</li>
       <li>el historial de pagos por usuario con totales,</li>
@@ -59,31 +55,31 @@
       <li>la ocupación por ruta para analizar la demanda.</li>
     </ul>
     <p>El sistema se probó con más de 60 registros de prueba.</p>
-    <div class="chips"><span class="chip">Node.js</span><span class="chip">API REST</span><span class="chip">JSON</span><span class="chip">MongoDB</span><span class="chip">Índices geoespaciales</span><span class="chip">JSON Schema</span><span class="chip">Agregaciones ($lookup)</span><span class="chip">Geolocalización GPS</span></div>
 
     <h2>Mi rol</h2>
     <p>Formé parte de un equipo de cuatro estudiantes. Participé en el diseño del modelo de datos documental en MongoDB, en la construcción de las consultas de agregación y en la definición de la propuesta de valor y el modelo de negocio, y presenté el proyecto ante el curso.</p>
 
     <h2>Visión de producto</h2>
-    <p>Además de la parte técnica, planteamos PULSO como un emprendimiento con un modelo de negocio basado en licencias para operadores de transporte y gobiernos locales, comisiones por pagos electrónicos y servicios de analítica. Como siguientes pasos contemplamos un piloto en Bucaramanga, la integración con el sistema de transporte masivo y el uso de aprendizaje automático para predecir la demanda.</p>
-    <p class="note">El equipo proyectó una mejora cercana al 40 % en los tiempos de espera y una reducción de entre el 25 % y el 35 % en costos operativos. Son estimaciones del proyecto, no resultados medidos: tendrían que validarse en un piloto.</p>
+    <p>Planteamos PULSO también como emprendimiento: licencias para operadores de transporte y gobiernos locales, comisiones por pagos electrónicos y servicios de analítica. Como siguientes pasos contemplamos un piloto en Bucaramanga, la integración con el sistema de transporte masivo y aprendizaje automático para predecir la demanda.</p>
+    <div class="note"><p>El equipo proyectó una mejora cercana al 40 % en los tiempos de espera y una reducción de entre el 25 % y el 35 % en costos operativos. Son estimaciones del proyecto, no resultados medidos: tendrían que validarse en un piloto.</p></div>
 
     <h2>Lo que aprendí</h2>
     <p>Que en un problema de ciudad la parte técnica es solo la mitad. Diseñar un modelo documental en MongoDB me obligó a pensar primero en cómo se van a consultar los datos, y no solo en cómo se guardan. Y pensar el modelo de negocio me enseñó que una buena solución también tiene que ser sostenible para quien la opera.</p>
 
-    <div class="cta">
-      <p><b>¿Trabajas en movilidad o en soluciones para la ciudad?</b><br>Me encantaría conversar.</p>
-      <div class="btns">
-        <a class="btn primary" href="mailto:laleboga@gmail.com">laleboga@gmail.com</a>
-        <a class="btn ghost" href="https://www.linkedin.com/in/luis-alejandro-bohorquez-garcia-600184437" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn ghost" href="https://github.com/luisbohorquez15" target="_blank" rel="noopener">GitHub</a>
-      </div>
+    <div class="btns">
+      <a class="btn primary" href="contacto.html">¿Trabajas en movilidad? Conversemos</a>
+      <a class="btn" href="ingeniero.html">Ver más proyectos</a>
     </div>
+  </section>
 
-  </div>
-</section>
-
-<footer>© 2026 Luis Alejandro Bohórquez García · Bucaramanga, Colombia</footer>
+  <footer>
+    <span>© 2026 Luis Alejandro Bohórquez García · Bucaramanga, Colombia</span>
+    <nav>
+      <a href="https://www.linkedin.com/in/luis-alejandro-bohorquez-garcia-600184437" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/luisbohorquez15" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </footer>
+</div>
 
 </body>
 </html>

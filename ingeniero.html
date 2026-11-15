@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ingeniero · Luis Alejandro Bohórquez</title>
+<meta name="description" content="Proyectos de Luis Alejandro Bohórquez: CacaoSmart IoT, PULSO, OptiMed y PetMatch.">
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a href="index.html" class="back">← Volver al inicio</a>
+    <nav>
+      <a href="ingeniero.html" aria-current="page">Ingeniero</a>
+      <a href="emprendedor.html">Emprendedor</a>
+      <a href="comunicador.html">Comunicador</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <div class="page-head rise">
+    <span class="eyebrow">01 · Ingeniero</span>
+    <h1>Construyo soluciones<br>para <em>problemas reales.</em></h1>
+    <p>Cada proyecto empieza con una pregunta concreta: qué le preocupa a la persona que lo va a usar. Aquí está qué resuelve cada uno, cómo lo construí y qué aprendí.</p>
+  </div>
+
+  <section class="rise d2">
+    <h2 class="title">Proyectos</h2>
+    <p class="sub">Proyectos académicos y propios, con código verificable.</p>
+
+    <div class="grid">
+      <article class="card featured">
+        <span class="kicker">Agricultura de precisión · Proyecto final de IoT · 2026</span>
+        <h3>CacaoSmart IoT</h3>
+        <p>Monitoreo y control del cultivo y el beneficio del <b>cacao fino de aroma en Santander</b>: microclima, riego, fermentación y secado, con reglas que actúan solas.</p>
+        <div class="stats">
+          <div><b>10</b><small>dispositivos</small></div>
+          <div><b>2</b><small>ESP32 reales</small></div>
+          <div><b>4</b><small>gemelos digitales</small></div>
+          <div><b>5</b><small>lazos de control</small></div>
+        </div>
+        <p>Los sensores publican por <b>MQTT</b>; <b>Node-RED</b> funciona como motor de reglas y API REST; los datos se guardan en <b>InfluxDB</b> y se visualizan en <b>Grafana</b>. El sistema no solo mide: también actúa. Si el UV sube, cierra la polisombra; si el suelo está seco, consulta el pronóstico de lluvia antes de regar. Todo desplegado en Azure.</p>
+        <div class="chips"><span class="chip">ESP32</span><span class="chip">MQTT</span><span class="chip">Node-RED</span><span class="chip">InfluxDB</span><span class="chip">Grafana</span><span class="chip">Azure</span><span class="chip">Docker</span></div>
+        <div class="links"><a href="https://github.com/luisbohorquez15/CacaoSmart-IoT" target="_blank" rel="noopener">Ver código en GitHub →</a></div>
+      </article>
+
+      <article class="card">
+        <span class="kicker">Movilidad · Seguridad</span>
+        <h3>PULSO · Rutas seguras en tiempo real</h3>
+        <p>Las apps de mapas dicen cuál ruta es la más rápida, casi nunca cuál es la más segura. PULSO combina <b>GPS en tiempo real</b>, alertas ciudadanas y un mapa de zonas seguras para el transporte de Bucaramanga.</p>
+        <div class="chips"><span class="chip">Node.js</span><span class="chip">MongoDB</span><span class="chip">Índices geoespaciales</span></div>
+        <div class="links"><a href="pulso.html">Leer el caso completo →</a></div>
+      </article>
+
+      <article class="card">
+        <span class="kicker">Salud</span>
+        <h3>OptiMed · Turnos médicos</h3>
+        <p>La asignación de citas suele ser desordenada y genera saturación y pérdida de turnos. OptiMed es una plataforma web responsiva que <b>centraliza el agendamiento</b> y optimiza la gestión de turnos.</p>
+        <div class="chips"><span class="chip">Firebase Auth</span><span class="chip">Cloud Firestore</span><span class="chip">Ingeniería de Software</span></div>
+      </article>
+
+      <article class="card">
+        <span class="kicker">Impacto social</span>
+        <h3>PetMatch · Adopciones y donaciones</h3>
+        <p>Muchas fundaciones gestionan adopciones y donaciones por chats y hojas de cálculo sueltas. PetMatch es una <b>app móvil</b> que centraliza el proceso de adopción y el apoyo a las fundaciones.</p>
+        <div class="chips"><span class="chip">Kotlin</span><span class="chip">Android</span></div>
+        <div class="links"><a href="https://github.com/luisbohorquez15/PetMatch" target="_blank" rel="noopener">Ver código en GitHub →</a></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="rise d3">
+    <h2 class="title">Tecnologías</h2>
+    <p class="sub">Con las que he construido proyectos reales.</p>
+    <div class="grid">
+      <div class="card">
+        <h3 style="font-size:1.25rem">Desarrollo</h3>
+        <div class="chips"><span class="chip">Python</span><span class="chip">Java</span><span class="chip">JavaScript / TypeScript</span><span class="chip">Node.js</span><span class="chip">React</span><span class="chip">Kotlin</span><span class="chip">PHP</span></div>
+      </div>
+      <div class="card">
+        <h3 style="font-size:1.25rem">Datos, IoT y nube</h3>
+        <div class="chips"><span class="chip">SQL</span><span class="chip">MongoDB</span><span class="chip">Firebase</span><span class="chip">InfluxDB</span><span class="chip">MQTT</span><span class="chip">Docker</span><span class="chip">Azure</span><span class="chip">Git / GitHub</span></div>
+      </div>
+      <div class="card">
+        <h3 style="font-size:1.25rem">Producto y diseño</h3>
+        <div class="chips"><span class="chip">Figma</span><span class="chip">UX/UI</span><span class="chip">Prototipado</span><span class="chip">Meta Ads</span></div>
+      </div>
+      <div class="card">
+        <h3 style="font-size:1.25rem">Comunicación</h3>
+        <div class="chips"><span class="chip">Oratoria</span><span class="chip">Presentación de ideas</span><span class="chip">Trabajo en equipo</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rise d4">
+    <div class="note">
+      <h3>🤖 Cómo uso la inteligencia artificial</h3>
+      <p>Uso asistentes de IA como copiloto: para estructurar documentación, depurar errores y aprender más rápido una tecnología nueva. Las decisiones de diseño, el código que entrego y su revisión siguen siendo mi responsabilidad. Para mí la IA no reemplaza entender el problema: me da más tiempo para hacerlo.</p>
+    </div>
+    <div class="btns">
+      <a class="btn primary" href="https://github.com/luisbohorquez15" target="_blank" rel="noopener">Mi GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/luis-alejandro-bohorquez-garcia-600184437" target="_blank" rel="noopener">Mi LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Luis Alejandro Bohórquez García · Bucaramanga, Colombia</span>
+    <nav>
+      <a href="emprendedor.html">Siguiente: Emprendedor →</a>
+    </nav>
+  </footer>
+</div>
+
+</body>
+</html>

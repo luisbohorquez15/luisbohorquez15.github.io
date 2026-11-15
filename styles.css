@@ -1,86 +1,144 @@
-  :root{
-    --navy:#0F172A; --blue:#0284C7; --gray:#94A3B8;
-    --bg:#FFFFFF; --soft:#F1F5F9; --text:#0F172A; --muted:#475569; --line:#E2E8F0;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-  a{color:var(--blue);text-decoration:none}
-  a:hover{text-decoration:underline}
-  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+/* ===== Luis Alejandro Bohórquez · Portafolio ===== */
+:root{
+  --bg:#FAFAF8;
+  --surface:#FFFFFF;
+  --ink:#0F172A;
+  --muted:#5B6474;
+  --soft:#94A3B8;
+  --line:#E7E5E0;
+  --accent:#0284C7;
+  --accent-soft:#E0F2FE;
+  --warm:#F4F1EA;
+  --radius:18px;
+  --serif:"Instrument Serif", Georgia, "Times New Roman", serif;
+  --sans:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px}
+.narrow{max-width:720px}
 
-  nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
-  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
-  .logo{font-weight:700;color:var(--navy)}
-  .logo span{color:var(--blue)}
-  nav ul{list-style:none;display:flex;gap:22px}
-  nav ul a{color:var(--muted);font-size:.92rem;font-weight:500}
-  nav ul a:hover{color:var(--blue);text-decoration:none}
+/* ---------- Animación de entrada ---------- */
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.rise{opacity:0;animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
+.d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}.d4{animation-delay:.35s}.d5{animation-delay:.45s}.d6{animation-delay:.55s}
+@media (prefers-reduced-motion:reduce){.rise{animation:none;opacity:1}}
 
-  header{background:var(--navy);color:#fff;padding:90px 0 80px}
-  .tag{display:inline-block;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:#7DD3FC;margin-bottom:14px;font-weight:600}
-  h1{font-size:clamp(2rem,5vw,3rem);line-height:1.15;margin-bottom:16px}
-  h1 span{color:#38BDF8}
-  header p{color:#CBD5E1;max-width:620px;font-size:1.08rem}
-  .btns{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
-  .btn{padding:11px 20px;border-radius:8px;font-weight:600;font-size:.95rem}
-  .btn.primary{background:var(--blue);color:#fff}
-  .btn.ghost{border:1px solid #475569;color:#fff}
-  .btn:hover{text-decoration:none;opacity:.9}
+/* ---------- Barra superior ---------- */
+.top{display:flex;justify-content:space-between;align-items:center;padding:26px 0}
+.brand{font-family:var(--serif);font-size:1.35rem;letter-spacing:.01em}
+.brand span{color:var(--accent);font-style:italic}
+.top nav{display:flex;gap:22px;font-size:.9rem;color:var(--muted)}
+.top nav a:hover,.top nav a[aria-current]{color:var(--ink)}
+.back{font-size:.9rem;color:var(--muted)}
+.back:hover{color:var(--ink)}
 
-  section{padding:70px 0;border-bottom:1px solid var(--line)}
-  section.alt{background:var(--soft)}
-  h2{font-size:1.6rem;margin-bottom:8px}
-  .lead{color:var(--muted);margin-bottom:34px;max-width:640px}
+/* ---------- Portada (hub) ---------- */
+.hero{text-align:center;padding:48px 0 30px}
+.avatar{width:128px;height:128px;border-radius:50%;object-fit:cover;margin:0 auto 26px;box-shadow:0 0 0 6px var(--surface),0 0 0 7px var(--line)}
+.eyebrow{display:inline-block;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,7vw,4.6rem);line-height:1.02;letter-spacing:-.01em}
+.hero h1 em{color:var(--accent)}
+.rule{width:64px;height:2px;background:var(--accent);margin:26px auto;border-radius:2px;transform-origin:left;animation:grow 1s .5s cubic-bezier(.2,.7,.2,1) both}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.tagline{font-size:clamp(1.15rem,2.4vw,1.4rem);font-weight:500;margin-bottom:12px}
+.intro{color:var(--muted);max-width:600px;margin:0 auto}
 
-  .about{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
-  .about p{margin-bottom:14px}
-  .facts{background:var(--soft);border-radius:12px;padding:22px}
-  .facts div{padding:10px 0;border-bottom:1px solid var(--line)}
-  .facts div:last-child{border:0}
-  .facts b{display:block;font-size:1.4rem;color:var(--blue)}
-  .facts small{color:var(--muted)}
+/* ---------- Puertas ---------- */
+.doors{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;padding:40px 0 70px}
+.door{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px 28px 24px;display:flex;flex-direction:column;min-height:220px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.door:hover{transform:translateY(-4px);box-shadow:0 18px 40px -22px rgba(15,23,42,.35);border-color:#D6D3CC}
+.door .num{font-family:var(--serif);font-size:1rem;color:var(--soft)}
+.door .icon{font-size:1.7rem;margin:10px 0 8px}
+.door h2{font-family:var(--serif);font-weight:400;font-size:1.9rem;line-height:1.1;margin-bottom:8px}
+.door p{color:var(--muted);font-size:.95rem}
+.door .go{margin-top:auto;padding-top:18px;font-size:.9rem;font-weight:600;color:var(--accent);display:flex;align-items:center;gap:6px}
+.door .go i{font-style:normal;transition:transform .25s}
+.door:hover .go i{transform:translateX(4px)}
 
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px}
-  .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px;display:flex;flex-direction:column}
-  .card .kicker{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--blue);font-weight:600}
-  .card h3{font-size:1.18rem;margin:6px 0 10px}
-  .card p{color:var(--muted);font-size:.94rem;margin-bottom:10px}
-  .card .label{font-weight:600;color:var(--text);font-size:.85rem;margin-top:4px}
-  .chips{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 16px}
-  .chip{font-size:.78rem;background:var(--soft);color:var(--navy);padding:4px 10px;border-radius:999px;border:1px solid var(--line)}
-  .card .more{margin-top:auto;font-weight:600;font-size:.92rem}
+/* ---------- Páginas internas ---------- */
+.page-head{padding:34px 0 26px}
+.page-head .eyebrow{margin-bottom:12px}
+.page-head h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,6vw,3.8rem);line-height:1.05}
+.page-head h1 em{color:var(--accent)}
+.page-head p{color:var(--muted);font-size:1.08rem;max-width:660px;margin-top:16px}
+section{padding:34px 0}
+h2.title{font-family:var(--serif);font-weight:400;font-size:1.9rem;margin-bottom:6px}
+.sub{color:var(--muted);margin-bottom:24px;max-width:640px}
+hr.soft{border:0;border-top:1px solid var(--line);margin:8px 0}
 
-  .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
-  .skills h3{font-size:1rem;margin-bottom:10px}
+/* Tarjetas */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column}
+.card.featured{grid-column:1/-1;background:linear-gradient(135deg,#fff 0%,var(--accent-soft) 140%)}
+.card .kicker{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.card h3{font-family:var(--serif);font-weight:400;font-size:1.6rem;line-height:1.15;margin:8px 0 10px}
+.card p{color:var(--muted);font-size:.95rem;margin-bottom:10px}
+.card p b{color:var(--ink);font-weight:600}
+.card .links{margin-top:auto;padding-top:14px;display:flex;flex-wrap:wrap;gap:18px;font-size:.9rem;font-weight:600}
+.card .links a{color:var(--accent)}
+.card .links a:hover{text-decoration:underline}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:6px 0 4px}
+.chip{font-size:.78rem;background:var(--warm);color:var(--ink);padding:5px 11px;border-radius:999px}
+.stats{display:flex;gap:28px;flex-wrap:wrap;margin:6px 0 10px}
+.stats div b{display:block;font-family:var(--serif);font-weight:400;font-size:2rem;line-height:1;color:var(--ink)}
+.stats div small{color:var(--muted);font-size:.8rem}
 
-  .contact{text-align:center}
-  .contact .lead{margin:0 auto 26px}
-  .contact .btns{justify-content:center}
-  .contact .btn.ghost{color:var(--navy);border-color:var(--gray)}
+/* Lecciones / pilares */
+.list{display:grid;gap:14px}
+.item{display:grid;grid-template-columns:54px 1fr;gap:14px;padding:20px 0;border-top:1px solid var(--line)}
+.item:last-child{border-bottom:1px solid var(--line)}
+.item .n{font-family:var(--serif);font-size:1.8rem;color:var(--accent);line-height:1}
+.item h3{font-size:1.02rem;font-weight:600;margin-bottom:4px}
+.item p{color:var(--muted);font-size:.95rem}
 
-  footer{padding:26px 0;text-align:center;color:var(--gray);font-size:.85rem}
+/* Nota / IA */
+.note{background:var(--warm);border-radius:var(--radius);padding:24px 26px}
+.note h3{font-size:1.02rem;font-weight:600;margin-bottom:6px}
+.note p{color:var(--muted);font-size:.95rem}
 
-  @media (max-width:720px){
-    nav ul{display:none}
-    .about{grid-template-columns:1fr}
-    header{padding:64px 0 56px}
-    section{padding:54px 0}
-  }
+/* Agenda de contenido */
+.agenda{display:grid;gap:10px}
+.slot{display:grid;grid-template-columns:96px 1fr auto;gap:16px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 20px}
+.slot time{font-family:var(--serif);font-size:1.15rem}
+.slot .what b{display:block;font-weight:600;font-size:.96rem}
+.slot .what small{color:var(--muted)}
+.badge{font-size:.72rem;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:#075985;white-space:nowrap}
+.badge.done{background:#DCFCE7;color:#166534}
+.badge.soon{background:var(--warm);color:var(--muted)}
 
-/* ===== Ficha de proyecto ===== */
-.crumb{font-size:.88rem;color:#7DD3FC;display:block;width:fit-content;margin-bottom:18px}
-.crumb:hover{color:#fff}
-.meta{color:#94A3B8;font-size:.92rem;margin-top:10px}
-.case{max-width:760px}
-.case h2{font-size:1.3rem;margin:42px 0 10px}
+/* Botones */
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:600;font-size:.93rem;border:1px solid var(--line);background:var(--surface);transition:background .2s,border-color .2s}
+.btn:hover{border-color:var(--ink)}
+.btn.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn.primary:hover{background:#1E293B}
+
+/* Contacto */
+.mail{font-family:var(--serif);font-size:clamp(1.8rem,5vw,3rem);line-height:1.1;border-bottom:2px solid var(--accent);display:inline-block;margin:10px 0 6px;word-break:break-all}
+.mail:hover{color:var(--accent)}
+
+/* Caso de estudio */
+.case h2{font-family:var(--serif);font-weight:400;font-size:1.7rem;margin:38px 0 10px}
 .case h2:first-child{margin-top:0}
-.case p{margin-bottom:14px}
-.case ul{margin:6px 0 16px 20px}
+.case p{margin-bottom:14px;color:#334155}
+.case ul{margin:4px 0 16px 20px;color:#334155}
 .case li{margin-bottom:8px}
-.case .note{background:var(--soft);border-left:3px solid var(--blue);padding:14px 18px;border-radius:0 8px 8px 0;color:var(--muted);font-size:.94rem}
-.case .chips{margin-top:4px}
-.case .cta{margin-top:40px;padding:26px;border:1px solid var(--line);border-radius:12px;text-align:center}
-.case .cta p{margin-bottom:16px}
-.case .cta .btns{justify-content:center;margin-top:0}
-.case .cta .btn.ghost{color:var(--navy);border-color:var(--gray)}
+.case code{font-size:.88em;background:var(--warm);padding:1px 6px;border-radius:6px}
+
+/* Pie */
+footer{border-top:1px solid var(--line);margin-top:40px;padding:28px 0 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--soft);font-size:.85rem}
+footer nav{display:flex;gap:18px}
+footer a:hover{color:var(--ink)}
+
+/* ---------- Responsive ---------- */
+@media (max-width:760px){
+  .doors,.grid{grid-template-columns:1fr}
+  .top nav{display:none}
+  .hero{padding-top:24px}
+  .door{min-height:0}
+  .slot{grid-template-columns:1fr;gap:6px}
+}
